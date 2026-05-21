@@ -1,0 +1,34 @@
+# Dependencies
+node_modules/
+web/node_modules/
+
+# Build outputs
+build/
+dist/
+web/dist/
+.vite/
+web/node_modules/.vite/
+*.node
+*.o
+*.a
+
+# Swift/Xcode
+.build/
+DerivedData/
+*.xcworkspace/xcuserdata/
+*.xcodeproj/xcuserdata/
+.swiftpm/
+
+# Logs and local env
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.env
+.env.*
+.node_token
+
+# OS/editor
+.DS_Store
+.idea/
+.vscode/

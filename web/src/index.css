@@ -1,0 +1,236 @@
+:root {
+  /* Gravity UI Phase 6 - Compose Mode Tokens */
+  --hapa-bg-blur-px: 20;
+  --hapa-anim-ms: 280ms;
+  --hapa-panel-opacity: 0.85;
+  --hapa-compose-width: 800px;
+  
+  --hapa-color-bg: #0f172a;
+  --hapa-color-border: rgba(148, 163, 184, 0.2);
+  --hapa-color-accent: #38bdf8;
+  --hapa-color-text: #f8fafc;
+  --hapa-color-muted: #94a3b8;
+
+  font-family: 'Inter', system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: dark;
+  color: var(--hapa-color-text);
+  background-color: transparent;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  width: 100vw;
+  height: 100vh;
+  background: transparent;
+  overflow: hidden;
+}
+
+.manifold-container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  padding-bottom: 40px;
+  background: radial-gradient(circle at center, rgba(56, 189, 248, 0.03) 0%, transparent 70%);
+}
+
+.manifold-status-bar {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  display: flex;
+  gap: 24px;
+  padding: 8px 16px;
+  background: rgba(15, 23, 42, 0.4);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid var(--hapa-color-border);
+  border-radius: 20px;
+  font-family: 'Roboto Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 0.05em;
+}
+
+.status-item {
+  display: flex;
+  gap: 8px;
+}
+
+.status-item .label {
+  color: var(--hapa-color-muted);
+}
+
+.status-item .value {
+  color: var(--hapa-color-accent);
+  font-weight: 700;
+}
+
+#janus-compose-surface {
+  width: var(--hapa-compose-width);
+  max-width: 90vw;
+  
+  background: rgba(15, 23, 42, var(--hapa-panel-opacity));
+  backdrop-filter: blur(calc(var(--hapa-bg-blur-px) * 1px));
+  -webkit-backdrop-filter: blur(calc(var(--hapa-bg-blur-px) * 1px));
+  border: 1px solid var(--hapa-color-border);
+  border-radius: 12px;
+  padding: 24px;
+  
+  transition: all var(--hapa-anim-ms) ease;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(255, 255, 255, 0.05);
+  
+  transform: translateY(0);
+  opacity: 0.9;
+}
+
+#janus-compose-surface.focused {
+  opacity: 1;
+  border-color: rgba(56, 189, 248, 0.4);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.6), 0 0 20px rgba(56, 189, 248, 0.1);
+}
+
+.compose-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+}
+
+.compose-header .brand {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--hapa-color-muted);
+}
+
+.compose-header .sigil {
+  font-size: 16px;
+  color: var(--hapa-color-accent);
+}
+
+.compose-header .mode-indicator {
+  padding: 2px 8px;
+  background: rgba(56, 189, 248, 0.1);
+  color: var(--hapa-color-accent);
+  border-radius: 4px;
+}
+
+.compose-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.compose-input-area {
+  width: 100%;
+  background: transparent;
+  border: none;
+  color: inherit;
+  font-size: 20px;
+  font-weight: 300;
+  line-height: 1.4;
+  resize: none;
+  outline: none;
+  min-height: 100px;
+  max-height: 400px;
+  font-family: inherit;
+  margin-bottom: 20px;
+}
+
+.compose-input-area::placeholder {
+  color: rgba(148, 163, 184, 0.3);
+}
+
+.attachment-ribbon {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding-top: 16px;
+  border-top: 1px solid var(--hapa-color-border);
+}
+
+.attachment-token {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid var(--hapa-color-border);
+  border-radius: 6px;
+  padding: 6px 12px;
+  font-size: 11px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--hapa-color-text);
+  cursor: default;
+  transition: all 0.2s ease;
+}
+
+.attachment-token:hover {
+  background: rgba(255, 255, 255, 0.06);
+  border-color: var(--hapa-color-accent);
+}
+
+.attachment-token svg {
+  color: var(--hapa-color-accent);
+  opacity: 0.8;
+}
+
+.at-size {
+  color: var(--hapa-color-muted);
+  font-size: 9px;
+  font-family: 'Roboto Mono', monospace;
+}
+
+.add-attachment-btn {
+  background: transparent;
+  border: 1px dashed var(--hapa-color-border);
+  border-radius: 6px;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--hapa-color-muted);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.add-attachment-btn:hover {
+  border-color: var(--hapa-color-accent);
+  color: var(--hapa-color-accent);
+  background: rgba(56, 189, 248, 0.05);
+}
+
+.compose-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 24px;
+  font-size: 10px;
+  color: var(--hapa-color-muted);
+}
+
+.shortcuts kbd {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 3px;
+  padding: 2px 4px;
+  font-family: inherit;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --hapa-anim-ms: 0ms !important;
+    --hapa-bg-blur-px: 0 !important;
+  }
+}
