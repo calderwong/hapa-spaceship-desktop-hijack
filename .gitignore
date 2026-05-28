@@ -32,3 +32,27 @@ yarn-error.log*
 .DS_Store
 .idea/
 .vscode/
+# Hapa GitHub safety: local secrets, credentials, dependencies, generated sidecars
+!.env.example
+!.env.sample
+!.env.template
+.auth_token
+.api_token
+*.pem
+*.key
+*.p8
+*.p12
+id_rsa
+id_rsa.*
+id_ed25519
+id_ed25519.*
+*credentials.json
+*secrets.json
+.venv/
+venv/
+__pycache__/
+*.pyc
+*.sqlite-wal
+*.sqlite-shm
+*.db-wal
+*.db-shm
