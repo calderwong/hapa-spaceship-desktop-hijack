@@ -21,7 +21,7 @@ Project Janus is intended to be a local-first Hapa interface node:
 - It gives Hapa agents and operators a spatial desktop surface rather than a normal app window.
 - It explores a shared “Monolith” heap between Swift/Metal and Electron so UI and native rendering can coordinate with minimal copying.
 - It preserves the Hapa spaceship metaphor: the user’s desktop becomes the bridge/viewscreen, while the compose UI acts as an operator console.
-- It links to the global wiki node: `[[Nodes/Existing/hapa-spaceship-desktop-hijack]]` in `/Users/calderwong/Desktop/Hapa_Worldbuilding_Wiki`.
+- It links to the global wiki node: `[[Nodes/Existing/hapa-spaceship-desktop-hijack]]` in `${HAPA_SYSTEM_ROOT}/canon/wiki/hapa-worldbuilding-wiki/SOURCE`.
 
 ## Architecture
 
@@ -158,7 +158,7 @@ Contributors may opt into Bananas work-contribution tracking for attribution. Ba
 
 Global node note:
 
-- `/Users/calderwong/Desktop/Hapa_Worldbuilding_Wiki/Nodes/Existing/hapa-spaceship-desktop-hijack.md`
+- `${HAPA_SYSTEM_ROOT}/canon/wiki/hapa-worldbuilding-wiki/SOURCE/Nodes/Existing/hapa-spaceship-desktop-hijack.md`
 - Obsidian link: `[[Nodes/Existing/hapa-spaceship-desktop-hijack|hapa-spaceship-desktop-hijack]]`
 
 ## Open risks / sharpening tests
@@ -180,7 +180,7 @@ Janus/spaceship desktop surface prototype exploring Electron, Vite, native Swift
 ### Current status
 
 - Status: **prototype desktop surface**.
-- Local source root: `/Users/calderwong/Desktop/hapa-spaceship-desktop-hijack`.
+- Local source root: `${HAPA_NODE_ROOT}`.
 - This README is intended to be useful to both human operators and future agents: it should explain what the node is for, what it consumes, what it emits, how it connects to other Hapa nodes, and what should stay out of git.
 
 ### Inputs
@@ -199,16 +199,16 @@ Janus/spaceship desktop surface prototype exploring Electron, Vite, native Swift
 
 ### Related Hapa nodes
 
-- [Hapa AG / Dev Proto](file:///Users/calderwong/Desktop/hapa-dev-proto) — Primary local-first app; many nodes feed it cards, assets, chat, debug, or projection data.
-- [Hapa Worldbuilding Wiki](file:///Users/calderwong/Desktop/Hapa_Worldbuilding_Wiki) — Canonical Markdown graph for lore, nodes, names, cards, systems, and provenance.
-- [Overwatch](file:///Users/calderwong/Desktop/.Overwatch) — Operations map: inventory, source index, task inbox, protocols, and runbooks.
-- [Hapa Telemetry Node](file:///Users/calderwong/Desktop/hapa-telemetry-node) — Discovery/monitoring hub for node health, capabilities, launchers, and relationships.
-- [Hapa Keys Node](file:///Users/calderwong/Desktop/hapa-keys-node) — Local key vault used by authenticated nodes and tools.
-- [Hapa Lore Node](file:///Users/calderwong/Desktop/hapa-lore-node) — Chronicle/canon service for daily progress, lore, and searchable wisdom.
-- [Hapa Anvil Node](file:///Users/calderwong/Desktop/hapa-anvil-node) — Card standardization/evaluation/forge node for turning raw card ideas into usable artifacts.
-- [Hapa Janus World Node](file:///Users/calderwong/Desktop/hapa-janus-world-node) — World-state truth kernel and event tape for Janus/desktop simulation work.
-- [Hapa MLX Station](file:///Users/calderwong/hapa-mlx-station) — Apple Silicon media-generation station that produces visual/audio assets for cards, wiki, and production runs.
-- [Hapa Lance Node](file:///Users/calderwong/Desktop/hapa-lance-node) — Local indexing/projection layer for cards, wiki chunks, embeddings, and multimodal records.
+- [Hapa AG / Dev Proto](hapa://node/hapa-dev-proto) — Primary local-first app; many nodes feed it cards, assets, chat, debug, or projection data.
+- [Hapa Worldbuilding Wiki](hapa://node/hapa-worldbuilding-wiki) — Canonical Markdown graph for lore, nodes, names, cards, systems, and provenance.
+- [Overwatch](hapa://node/overwatch) — Operations map: inventory, source index, task inbox, protocols, and runbooks.
+- [Hapa Telemetry Node](hapa://node/hapa-telemetry-node) — Discovery/monitoring hub for node health, capabilities, launchers, and relationships.
+- [Hapa Keys Node](hapa://node/hapa-keys-node) — Local key vault used by authenticated nodes and tools.
+- [Hapa Lore Node](hapa://node/hapa-lore-node) — Chronicle/canon service for daily progress, lore, and searchable wisdom.
+- [Hapa Anvil Node](hapa://node/hapa-anvil-node) — Card standardization/evaluation/forge node for turning raw card ideas into usable artifacts.
+- [Hapa Janus World Node](hapa://node/hapa-janus-world-node) — World-state truth kernel and event tape for Janus/desktop simulation work.
+- [Hapa MLX Station](hapa://node/hapa-mlx-station) — Apple Silicon media-generation station that produces visual/audio assets for cards, wiki, and production runs.
+- [Hapa Lance Node](hapa://node/hapa-lance-node) — Local indexing/projection layer for cards, wiki chunks, embeddings, and multimodal records.
 
 ### Operating contract
 
